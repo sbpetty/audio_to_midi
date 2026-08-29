@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# PyCharm settings
+.idea/
+.junie/
+
+# Local audio files
+# Uncomment this if your audio files should remain private or local:
+*.wav
+*.mp3
