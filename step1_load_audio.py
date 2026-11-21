@@ -1,13 +1,27 @@
 from pathlib import Path
+import argparse
 
 import librosa
 import matplotlib.pyplot as plt
 
 
-audio_path = Path(__file__).parent / "melody.wav"
+parser = argparse.ArgumentParser(
+    description="Load an audio file and display its waveform."
+)
 
-print(f"Looking for audio at: {audio_path}")
-print(f"File exists: {audio_path.exists()}")
+parser.add_argument(
+    "audio_path",
+    type=Path,
+    help="Path to the audio file"
+)
+
+args = parser.parse_args()
+audio_path = args.audio_path
+
+if not audio_path.exists():
+    raise SystemExit(f"Audio file not found: {audio_path}")
+
+print(f"Loading audio from: {audio_path}")
 
 y, sample_rate = librosa.load(
     audio_path,
