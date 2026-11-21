@@ -10,6 +10,7 @@ __pycache__/
 .junie/
 
 # Local audio files
-# Uncomment this if your audio files should remain private or local:
-*.wav
-*.mp3
+samples/
+
+# Optional editor files
+.vscode/
